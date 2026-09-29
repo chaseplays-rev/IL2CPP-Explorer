@@ -3,5 +3,4 @@
 
 namespace Menu {
 	void Draw();
-	void DrawMethodInspector();
 }

@@ -3,7 +3,7 @@
 class Camera : public Component {
 public:
 	bool WorldToScreen(Vector2& screen, Vector3 world) {
-		Vector3 ret = Method::CallVT<Vector3>("UnityEngine.CoreModule", "UnityEngine", "Camera", "WorldToScreenPoint", 1, this, &world);
+		Vector3 ret = Method::Call<Vector3(*)(Camera*, Vector3)>("UnityEngine.CoreModule", "UnityEngine", "Camera", "WorldToScreenPoint", 1)(this, world);
 		if (ret.z < 0)
 			return false;
 		screen.x = ret.x;

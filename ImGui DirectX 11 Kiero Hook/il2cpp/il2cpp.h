@@ -1,7 +1,7 @@
 #pragma once
 #include "il2cpp_resolver.h"
 
-namespace IL2CPP_API {
+namespace IL2CPP {
 	inline Il2CppDomain* Domain = nullptr;
 
 	class Class;
@@ -131,4 +131,4 @@ namespace IL2CPP_API {
 	}
 }
 
-using namespace IL2CPP_API;
+using namespace IL2CPP;

@@ -1,10 +1,5 @@
 #include "menu.h"
 
-void Menu::DrawMethodInspector()
-{
-    Helper::DrawMethodInspector();
-}
-
 void Menu::Draw()
 {
     ImGui::SetNextWindowSize(
@@ -13,7 +8,7 @@ void Menu::Draw()
     );
 
     ImGui::Begin(
-        "Mono Runtime Explorer",
+        "IL2CPP Runtime Explorer",
         nullptr,
         ImGuiWindowFlags_NoCollapse |
         ImGuiWindowFlags_NoScrollbar |
@@ -22,8 +17,6 @@ void Menu::Draw()
 
     ImVec2 windowSize =
         ImGui::GetContentRegionAvail();
-
-    Helper::DrawSidebar(windowSize);
 
     ImGui::SameLine();
 
@@ -35,10 +28,6 @@ void Menu::Draw()
 
     ImGui::Dummy(ImVec2(0, 12));
 
-    Helper::DrawCurrentTab();
-
     ImGui::EndChild();
     ImGui::End();
-
-    DrawMethodInspector();
 }

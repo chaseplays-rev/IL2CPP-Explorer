@@ -4,7 +4,7 @@
 #include <Windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
-#include "minhook/include/MinHook.h"
+#include "../includes.h"
 
 class Il2CppMemory {
 public:

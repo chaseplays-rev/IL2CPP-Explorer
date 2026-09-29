@@ -16,8 +16,6 @@ void InitImGui()
 
 	ImGui_ImplWin32_Init(pWindow);
 	ImGui_ImplDX11_Init(pDevice, pContext);
-
-	Helper::SetupModernStyle();
 }
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
@@ -54,7 +52,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	if (!threadAttached)
 	{
-		Mono::Attach();
+		IL2CPP::Attach();
 		threadAttached = true;
 	}
 	ImGui_ImplDX11_NewFrame();

@@ -6,7 +6,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	FILE* file;
 	freopen_s(&file, "CONOUT$", "w", stdout);
 
-	IL2CPP_API::Initialize();
+	IL2CPP::Initialize();
 
 	bool init_hook = false;
 	do
