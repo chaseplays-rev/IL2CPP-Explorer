@@ -24,7 +24,7 @@ namespace IL2CPP_API {
 	IL2TYPE(Il2CppThread);
 
 	using Il2CppChar = wchar_t;
-	using Il2CppGCHandle = uint32_t;
+	using Il2CppGCHandle = void*;
 
 	enum Il2CppTypeEnum {
 		IL2CPP_TYPE_END = 0x00,
@@ -121,6 +121,7 @@ namespace IL2CPP_API {
 	IL2FUNC(Il2CppClass*, t_field_get_parent, field_get_parent, Il2CppField*);
 	IL2FUNC(size_t, t_field_get_offset, field_get_offset, Il2CppField*);
 	IL2FUNC(uint32_t, t_field_get_flags, field_get_flags, Il2CppField*);
+	IL2FUNC(Il2CppObject*, t_field_get_value_object, field_get_value_object, Il2CppField*, Il2CppObject*);
 	IL2FUNC(void, t_field_get_value, field_get_value, Il2CppObject*, Il2CppField*, void*);
 	IL2FUNC(void, t_field_set_value, field_set_value, Il2CppObject*, Il2CppField*, void*);
 	IL2FUNC(void, t_field_static_get_value, field_static_get_value, Il2CppField*, void*);
@@ -146,6 +147,7 @@ namespace IL2CPP_API {
 	IL2FUNC(Il2CppObject*, t_object_new, object_new, Il2CppClass*);
 	IL2FUNC(void, t_runtime_object_init, runtime_object_init, Il2CppObject*);
 	IL2FUNC(Il2CppObject*, t_runtime_invoke, runtime_invoke, Il2CppMethod*, void*, void**, Il2CppException**);
+	IL2FUNC(Il2CppObject*, t_runtime_invoke_convert_args, runtime_invoke_convert_args, Il2CppMethod*, void*, Il2CppObject**, int, Il2CppException**);
 	IL2FUNC(void*, t_object_unbox, object_unbox, Il2CppObject*);
 	IL2FUNC(Il2CppObject*, t_value_box, value_box, Il2CppClass*, void*);
 	IL2FUNC(Il2CppString*, t_object_to_string, object_to_string, Il2CppObject*, Il2CppException**);

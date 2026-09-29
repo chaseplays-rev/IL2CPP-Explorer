@@ -4,7 +4,7 @@
 #include <Windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
-#include "../includes.h"
+#include "../kiero/minhook/include/MinHook.h"
 
 class Il2CppMemory {
 public:

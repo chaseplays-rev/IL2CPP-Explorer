@@ -72,6 +72,9 @@
     <ClCompile Include="il2cpp\il2cpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="directx\class_dumper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kiero\minhook\dll_resources\MinHook.rc">
@@ -176,6 +179,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="il2cpp\il2cpp_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="directx\class_dumper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="directx\object_cache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

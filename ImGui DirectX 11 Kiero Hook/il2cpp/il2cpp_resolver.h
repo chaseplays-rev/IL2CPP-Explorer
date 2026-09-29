@@ -63,6 +63,7 @@ namespace IL2CPP_RESOLVER {
 		DO_EXPORT(field_get_parent, t_field_get_parent, L"il2cpp_field_get_parent");
 		DO_EXPORT(field_get_offset, t_field_get_offset, L"il2cpp_field_get_offset");
 		DO_EXPORT(field_get_flags, t_field_get_flags, L"il2cpp_field_get_flags");
+		DO_EXPORT(field_get_value_object, t_field_get_value_object, L"il2cpp_field_get_value_object");
 		DO_EXPORT(field_get_value, t_field_get_value, L"il2cpp_field_get_value");
 		DO_EXPORT(field_set_value, t_field_set_value, L"il2cpp_field_set_value");
 		DO_EXPORT(field_static_get_value, t_field_static_get_value, L"il2cpp_field_static_get_value");
@@ -88,6 +89,7 @@ namespace IL2CPP_RESOLVER {
 		DO_EXPORT(object_new, t_object_new, L"il2cpp_object_new");
 		DO_EXPORT(runtime_object_init, t_runtime_object_init, L"il2cpp_runtime_object_init");
 		DO_EXPORT(runtime_invoke, t_runtime_invoke, L"il2cpp_runtime_invoke");
+		DO_EXPORT(runtime_invoke_convert_args, t_runtime_invoke_convert_args, L"il2cpp_runtime_invoke_convert_args");
 		DO_EXPORT(object_unbox, t_object_unbox, L"il2cpp_object_unbox");
 		DO_EXPORT(value_box, t_value_box, L"il2cpp_value_box");
 		DO_EXPORT(object_to_string, t_object_to_string, L"il2cpp_object_to_string");

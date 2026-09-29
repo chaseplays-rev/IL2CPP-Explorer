@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="directx\class_dumper.cpp" />
     <ClCompile Include="directx\drawing.cpp" />
     <ClCompile Include="directx\menu.cpp" />
     <ClCompile Include="directx\present.cpp" />
@@ -170,8 +171,10 @@
     <ResourceCompile Include="kiero\minhook\dll_resources\MinHook.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="directx\class_dumper.h" />
     <ClInclude Include="directx\drawing.h" />
     <ClInclude Include="directx\menu.h" />
+    <ClInclude Include="directx\object_cache.h" />
     <ClInclude Include="directx\present.h" />
     <ClInclude Include="il2cpp\il2cpp.h" />
     <ClInclude Include="il2cpp\il2cpp_memory.h" />

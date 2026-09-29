@@ -1,96 +1,30 @@
 #include "drawing.h"
+#include "object_cache.h"
 
-namespace Drawing
-{
-   /* void DrawCachedObjects(ImDrawList* pDrawList)
-    {
-        if (!Globals::highlightObj ||
-            !Explorer::pSelectedClass)
-        {
-            return;
-        }
+namespace Drawing {
+	void DrawCachedObjects(ImDrawList* pDrawList) {
+		if (!pDrawList || !Globals::highlightObj || !Globals::selectedClass || !Globals::selectedClassIsComponent) return;
+		Array<Object*>* objects = ObjectCache::GetSnapshot();
+		if (!objects || Globals::objectSnapshotCount <= 0) return;
+		Camera* camera = Camera::Get();
+		if (!camera) return;
+		const char* className = Globals::selectedClass->GetName();
+		if (!className) className = "Object";
+		for (int i = 0; i < Globals::objectSnapshotCount; i++) {
+			Object* rawObject = ObjectCache::GetObjectAt(i);
+			if (!rawObject) continue;
+			if (!ObjectCache::SafeIsValid(rawObject)) continue;
+			Component* component = reinterpret_cast<Component*>(rawObject);
+			Transform* transform = component->GetTransform();
+			if (!transform) continue;
+			Vector3 position = transform->GetPosition();
+			Vector2 screen;
+			if (!camera->WorldToScreen(screen, position)) continue;
+			pDrawList->AddText(ImVec2(screen.x, screen.y), IM_COL32(255, 255, 255, 255), className);
+		}
+	}
 
-        if (!Cache::objectsHandle)
-            return;
-
-        Camera* pCam =
-            Camera::Get();
-
-        if (!pCam)
-            return;
-
-        Array<Object*>* pObjects =
-            reinterpret_cast<Array<Object*>*>(
-                mono_gchandle_get_target_v2(
-                    Cache::objectsHandle
-                )
-                );
-
-        if (!pObjects)
-            return;
-
-        int count =
-            pObjects->GetLength();
-
-        if (count <= 0)
-            return;
-
-        for (int i = 0; i < count; i++)
-        {
-            Component* object =
-                reinterpret_cast<Component*>(
-                    pObjects->GetValue(i)
-                    );
-
-            if (!object)
-                continue;
-
-            if (!object->IsValid())
-                continue;
-
-            Transform* pTrans =
-                object->GetTransform();
-
-            if (!pTrans)
-                continue;
-
-            Vector3 pos =
-                pTrans->GetPosition();
-
-            Vector2 screenPos;
-
-            if (!pCam->WorldToScreen(
-                screenPos,
-                pos
-            ))
-            {
-                continue;
-            }
-
-            std::string objTextFull =
-                std::to_string(i) +
-                " - " +
-                Explorer::pSelectedClass->GetName();
-
-            pDrawList->AddText(
-                {
-                    screenPos.x,
-                    screenPos.y
-                },
-                ImColor(
-                    255,
-                    255,
-                    255
-                ),
-                objTextFull.c_str()
-            );
-        }
-    }*/
-
-    void Render(ImDrawList* pDrawList)
-    {
-        /*DrawCachedObjects(
-            pDrawList
-        );*/
-    }
+	void Render(ImDrawList* pDrawList) {
+		DrawCachedObjects(pDrawList);
+	}
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "../sdk/sdk.hpp"
+#include "class_dumper.h"
 
 namespace Menu {
 	void Draw();
